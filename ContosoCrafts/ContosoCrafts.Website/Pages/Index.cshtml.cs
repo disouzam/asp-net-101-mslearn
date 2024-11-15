@@ -1,20 +1,19 @@
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace ContosoCrafts.Website.Pages
+namespace ContosoCrafts.Website.Pages;
+
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+    private readonly ILogger<IndexModel> logger;
+
+    public IndexModel(ILogger<IndexModel> logger)
     {
-        private readonly ILogger<IndexModel> _logger;
+        this.logger = logger;
+    }
 
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
+    public void OnGet()
+    {
 
-        public void OnGet()
-        {
-
-        }
     }
 }
