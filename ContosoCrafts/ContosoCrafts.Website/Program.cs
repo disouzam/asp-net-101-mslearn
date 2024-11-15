@@ -1,3 +1,5 @@
+﻿using ContosoCrafts.Website.Services;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -12,6 +14,7 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddRazorPages();
+        builder.Services.AddTransient<JsonFileProductService>();
 
         var app = builder.Build();
 
