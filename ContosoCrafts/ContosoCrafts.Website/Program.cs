@@ -14,6 +14,7 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddControllers();
+        builder.Services.AddServerSideBlazor();
         builder.Services.AddRazorPages();
         builder.Services.AddTransient<JsonFileProductService>();
 
@@ -37,6 +38,7 @@ public class Program
         app.MapRazorPages()
            .WithStaticAssets();
         app.MapControllers();
+        app.MapBlazorHub();
 
         app.Run();
     }
