@@ -16,8 +16,8 @@
             </div>
             <div class="card-footer">
                 <small class="text-muted">
-                    <button @onclick="(e => SelectProduct(product?.Id ?? string.Empty))"
-                        data-toggle="modal" data-target="#productModal" class="btn btn-primary">
+                    <button @onclick="(e => SelectProduct(product?.Id ?? string.Empty))" data-toggle="modal"
+                        data-target="#productModal" class="btn btn-primary">
                         More Info
                     </button>
                 </small>
@@ -61,11 +61,11 @@
                         var currentStar = i;
                         if (i <= currentRating)
                         {
-                            <span class="fa fa-star checked" @onclick="(e => SubmitRating(currentStar))"></span>
+                            <span class="five-pointed-star fa-star-pointer checked" @onclick="(e => SubmitRating(currentStar))"></span>
                         }
                         else
                         {
-                            <span class="fa fa-star" @onclick="(e => SubmitRating(currentStar))"></span>
+                            <span class="five-pointed-star fa-star-pointer" @onclick="(e => SubmitRating(currentStar))"></span>
                         }
                     }
                 </div>
