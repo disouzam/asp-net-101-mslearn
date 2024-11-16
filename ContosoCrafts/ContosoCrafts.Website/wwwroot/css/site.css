@@ -1,7 +1,7 @@
 /* Adapted from https://www.coding-dude.com/wp/css/css-star/ */
 .five-pointed-star {
     --star-color: black;
-    margin: 0.5em auto;
+    margin: 0.001em 0.5em;
     font-size: 1em;
     position: relative;
     display: block;
@@ -45,7 +45,7 @@
     --star-color: orange;
 }
 
-.fa-star {
+.fa-star-pointer {
     cursor: pointer;
 }
 
