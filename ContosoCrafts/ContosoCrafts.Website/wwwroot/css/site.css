@@ -8,6 +8,21 @@
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+.card-columns {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 3%;
+    row-gap: 20px;
+    max-width: 90%;
+    margin: auto;
+}
+
+.card {
+    min-width: 200px;
+    max-width: 30%;
+    margin: auto;
+}
+
 .card-columns .card:hover .card-img {
     opacity: 1;
 }
@@ -19,11 +34,10 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .card-columns .card-img {
-    height: 330px;
-    vertical-align: bottom;
-    background-position: center; /* Center the image */
+    height: 200px;
+    background-position: top; 
     background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-size: contain; /* Resize the background image to cover the entire container */
     opacity: .8;
 }
 

@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Components.Web
 @using ContosoCrafts.Website.Models
 @using ContosoCrafts.Website.Services
+
 @inject JsonFileProductService ProductService
 
 <div class="card-columns">
@@ -13,7 +14,7 @@
             </div>
             <div class="card-footer">
                 <small class="text-muted">
-                    <button onclick="(e => SelectProduct(product.Id))"
+                    <button @onclick="(e => SelectProduct(product.Id))"
                     data-toggle="modal" data-target="#productModal" class="btn btn-primary">More info</button>
                 </small>
             </div>
