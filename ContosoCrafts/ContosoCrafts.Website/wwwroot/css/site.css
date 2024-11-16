@@ -1,5 +1,18 @@
+.five-pointed-star {
+    --star-color: black;
+    margin: 1em auto;
+    font-size: 0px;
+    position: relative;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-bottom: 14px solid var(--star-color);
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+    transform: rotate(35deg)
+}
 .checked {
-    color: orange;
+    --star-color: orange;
 }
 
 .fa-star {
@@ -35,7 +48,7 @@ for details on configuring this project to bundle and minify static web assets. 
 
 .card-columns .card-img {
     height: 200px;
-    background-position: top; 
+    background-position: top;
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: contain; /* Resize the background image to cover the entire container */
     opacity: .8;
