@@ -1,11 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Text.Json;
-
-using ContosoCrafts.Website.Models;
-using ContosoCrafts.Website.Services;
+﻿using ContosoCrafts.Website.Services;
 
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -18,6 +13,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
+        builder.Services.AddControllers();
         builder.Services.AddRazorPages();
         builder.Services.AddTransient<JsonFileProductService>();
 
@@ -40,13 +36,7 @@ public class Program
         app.MapStaticAssets();
         app.MapRazorPages()
            .WithStaticAssets();
-
-        app.MapGet("/products", (context) =>
-        {
-            var products = app.Services.GetService<JsonFileProductService>().GetProducts();
-            var json = JsonSerializer.Serialize<IEnumerable<Product>>(products);
-            return context.Response.WriteAsync(json);
-        });
+        app.MapControllers();
 
         app.Run();
     }
