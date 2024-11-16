@@ -17,7 +17,7 @@
             <div class="card-footer">
                 <small class="text-muted">
                     <button @onclick="(e => SelectProduct(product?.Id ?? string.Empty))" data-toggle="modal"
-                        data-target="#productModal" class="btn btn-primary">
+                    data-target="#productModal" class="btn btn-primary">
                         More Info
                     </button>
                 </small>
@@ -102,15 +102,21 @@
         {
             voteCount = selectedProduct.Ratings.Count();
             voteLabel = voteCount > 1 ? "Votes" : "Vote";
-            currentRating = selectedProduct.Ratings.Sum() / voteCount;
+            var sum = selectedProduct.Ratings.Sum();
+            var rawAverage = Math.Round((double)sum / voteCount, 2);
+            currentRating = (int)Math.Round(rawAverage,0);
+            Console.WriteLine($"rawAverage={rawAverage}");
+            Console.WriteLine($"currentRating={currentRating}");
+            Console.WriteLine();
+
         }
 
-        System.Console.WriteLine($"Current rating for {selectedProduct?.Id}: {currentRating}");
+        Console.WriteLine($"Current rating for {selectedProduct?.Id}: {currentRating}");
     }
 
     void SubmitRating(int rating)
     {
-        System.Console.WriteLine($"Rating received for {selectedProduct?.Id}: {rating}");
+        Console.WriteLine($"Rating received for {selectedProduct?.Id}: {rating}");
         if (selectedProductId == null)
             return;
         ProductService.AddRating(selectedProductId, rating);
