@@ -6,8 +6,19 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Contoso Crafts</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h3>ASP.NET Web App, .NET 9, Bootstrap v4.6.2</h3>
+    <p>
+        Built by
+        <a href="https://www.linkedin.com/pulse/aplica%C3%A7%C3%B5es-web-com-aspnet-um-hello-world-dickson-souza-561pf/?trackingId=GAd9Dcma5L828bKhcYt7Tg%3D%3D"
+           target="_blank">
+            Dickson Souza
+        </a>
+        , following
+        <a href="https://youtube.com/playlist?list=PLKxUSo_Wrb3Oa65fiLYQ0ceSNNYYBa_xb&si=hlkTZhk3EhFw_gJd"
+           target="_blank">
+            ASP.NET 101 Series by Leslie Richardson and Scott Hanselman
+        </a>
+    </p>
 </div>
 
 @(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
